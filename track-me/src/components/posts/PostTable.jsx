@@ -3,7 +3,14 @@ import { Table, TableBody, TableCell, TableCaption, TableHeader, TableRow, Table
 import Link from "next/link"
 import {Edit} from 'lucide-react'
 
-export const PostTable = ({tittle}) => {
+export const PostTable = ({tittle, limit}) => {
+    // sorting post bassed on decending order
+    const sortedPosts = [...posts].sort((a, b) => new Date(
+        b.date).getTime() - new Date(a.date).getTime()
+    )
+
+    // cutting sorted posts to limits
+    const filteredPosts = limit? sortedPosts.slice(0, limit): sortedPosts
   return (
     <div className="mt-1">
         <h3 className="text-xl mb-2 font-semibold">{tittle ? tittle : "Posts"}</h3>
@@ -18,7 +25,7 @@ export const PostTable = ({tittle}) => {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {posts.map((post)=>(
+                {filteredPosts.map((post)=>(
                     <TableRow key={post.id}>
                         <TableCell>{post.title}</TableCell>
                         <TableCell className='hidden md:table-cell'>{post.author}</TableCell>

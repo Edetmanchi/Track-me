@@ -9,8 +9,7 @@ import {
     CommandSeparator,
     CommandShortcut,
   } from "@/components/ui/command"
-
-  import Link from "next/link"
+  import Link from "next/link";
   import {LayoutDashboard, Newspaper, Folder, CreditCard, Settings, User} from 'lucide-react'
 
 
@@ -28,7 +27,7 @@ export const Sidebar = () => {
                 </CommandItem>
                 <CommandItem>
                     <Newspaper className="pr-2 h-6 w-6"/> 
-                    <Link href='/Post'>Post</Link>
+                    <Link href='/posts'>Post</Link>
                 </CommandItem>
                 <CommandItem>
                     <Folder className="pr-2 h-6 w-6"/> 

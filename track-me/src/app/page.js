@@ -2,6 +2,7 @@ import Image from "next/image";
 import { DashboardCards} from "@/components/dashboard/DashboardCards";
 import {Folder, User, MessageCircle, Newspaper} from 'lucide-react'
 import { PostTable } from "@/components/posts/PostTable";
+import { AnalyticsChart } from "@/components/dashboard/AnalyticsCharts";
 export default function Home() {
   return (
     <>
@@ -11,8 +12,9 @@ export default function Home() {
         <DashboardCards tittle='Users' count={750} icon={<User className=' text-slate-600 mb-4' size={72}/>}/>
         <DashboardCards tittle='Comments' count={132} icon={<MessageCircle className=' text-slate-600 mb-4' size={72}/>}/>
       </div>
+      <AnalyticsChart/>
       <div>
-        <PostTable/>
+        <PostTable tittle='Latest Posts' limit={5}/>
       </div>
     </>
   );
