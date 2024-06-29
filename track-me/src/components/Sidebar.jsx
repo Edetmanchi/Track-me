@@ -18,7 +18,7 @@ export const Sidebar = () => {
   return (
     <Command className='bg-secondary rounded-none h-screen'>
         <CommandInput placeholder="Type a command or search..." />
-            <CommandList>
+            <CommandList className=''>
                 <CommandEmpty>No results found.</CommandEmpty>
                 <CommandGroup heading="Suggestions">
                 <CommandItem>
