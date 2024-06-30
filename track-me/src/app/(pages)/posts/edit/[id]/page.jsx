@@ -61,7 +61,7 @@ export default function PostEditPage({params}) {
     <>
       <BackButton text='Back to Post' link='/posts'/>
       <h2 className="text-2xl mb-3">Edit posts</h2>
-        <form onSubmit={handleSubmit} action="submit" className="space-y-8">
+        {/* <form onSubmit={handleSubmit} action="submit" className="space-y-8">
           <FormField
             control={form.control}
             name="tittle"
@@ -75,7 +75,22 @@ export default function PostEditPage({params}) {
               </FormItem>
             )}
           />
-        </form>
+        </form> */}
+        {/* <form onSubmit={handleSubmit} action="submit" className="space-y-8"> */}
+          <FormField
+            control={form.control}
+            name="tittle"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='uppercase text-s font-bold text-zinc-500 dark:text-secondary/70'>tittle</FormLabel>
+                <FormControl>
+                  <Input placeholder="shadcn" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        {/* </form> */}
     </>
   )
 }
