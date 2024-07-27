@@ -83,9 +83,9 @@ export default function PostEditPage({params}) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className='uppercase text-s font-bold text-zinc-500 dark:text-secondary/70'>tittle</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
+                  <FormControl>
+                    {/* <Input placeholder="shadcn" {...field} /> */}
+                  </FormControl>
                 <FormMessage />
               </FormItem>
             )}

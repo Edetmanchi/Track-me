@@ -9,6 +9,8 @@ import {
     CommandSeparator,
     CommandShortcut,
   } from "@/components/ui/command"
+  import Image from "next/image";
+  import Logo from './img/Logo.png'
   import Link from "next/link";
   import {LayoutDashboard, Newspaper, Folder, CreditCard, Settings, User} from 'lucide-react'
 
@@ -16,6 +18,10 @@ import {
 
 export const Sidebar = () => {
   return (
+    <>
+    <Link href="/">
+    <Image src={Logo} alt="logo"></Image>
+    </Link>
     <Command className='bg-secondary rounded-none h-screen'>
         <CommandInput placeholder="Type a command or search..." />
             <CommandList className=''>
@@ -54,6 +60,7 @@ export const Sidebar = () => {
             </CommandGroup>
         </CommandList>
     </Command>
+    </>
 
   )
 }
